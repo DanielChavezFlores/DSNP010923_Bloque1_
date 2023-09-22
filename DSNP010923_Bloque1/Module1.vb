@@ -2,20 +2,25 @@
 
     Sub Main(Args As String())
 
-        Dim cadena1 As String.
-       
-       
-
-
+        Dim Edad As SByte
 
         Console.WriteLine("Ingrese la edad")
+        Edad = Console.ReadLine()
 
-        cadena1 = Console.ReadLine()
-        If (cadena1 < 0 Or cadena1 > 100) Then
-            Console.WriteLine()
+        While (Edad < 0 Or Edad > 120)
+
+            Console.WriteLine("Ingrese una edad Valida")
+            Edad = Console.ReadLine()
+
+        End While
+
+        If (Edad > 18) Then
+                Console.WriteLine("Eres mayor de edad")
+            Else
+                Console.WriteLine("Eres menor de edad")
 
         End If
-        Console.WriteLine("Hoy si va a funcionar")
+
         Console.ReadLine()
     End Sub
 
