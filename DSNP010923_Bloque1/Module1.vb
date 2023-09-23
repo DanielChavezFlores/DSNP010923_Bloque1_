@@ -34,7 +34,7 @@
             If (seleccion = "Y" Or seleccion = "y") Then
                 bandera = True
             Else
-                bandera = False
+                bandera = False 'Para salir del while externo
             End If
             Console.Clear()
         End While
