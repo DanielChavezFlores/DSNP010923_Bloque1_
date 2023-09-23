@@ -2,26 +2,43 @@
 
     Sub Main(Args As String())
 
-        Dim Edad As SByte
+        Dim bandera As Boolean
+        bandera = True
+        Dim seleccion As String
 
-        Console.WriteLine("Ingrese la edad")
-        Edad = Console.ReadLine()
+        While (bandera = True)
 
-        While (Edad < 0 Or Edad > 120)
+            Dim Edad As Integer
 
-            Console.WriteLine("Ingrese una edad Valida")
+
+            Console.WriteLine("Ingrese la edad")
             Edad = Console.ReadLine()
 
-        End While
+            While (Edad < 0 Or Edad > 120) 'se excluye el 0 de los valores no aceptados para incluir a los niños menores de un año
 
-        If (Edad > 18) Then
+                Console.WriteLine("Ingrese una edad Valida")
+                Edad = Console.ReadLine()
+                Console.Clear()
+
+            End While
+
+            If (Edad >= 18) Then
                 Console.WriteLine("Eres mayor de edad")
             Else
                 Console.WriteLine("Eres menor de edad")
 
-        End If
+            End If
 
-        Console.ReadLine()
+            Console.WriteLine("Desea evaluar otra edad?  Presione Y para continuar o cualquier otra tecla para salir")
+            seleccion = Console.ReadLine()
+            If (seleccion = "Y" Or seleccion = "y") Then
+                bandera = True
+            Else
+                bandera = False
+            End If
+            Console.Clear()
+        End While
+
     End Sub
 
 End Module
